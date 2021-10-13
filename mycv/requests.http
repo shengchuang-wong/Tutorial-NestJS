@@ -1,0 +1,72 @@
+### create user
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+  "email": "my1@email.com",
+  "password": "123456"
+}
+
+### signin user
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+  "email": "my1@email.com",
+  "password": "123456"
+}
+
+### Get current signed in user
+GET http://localhost:3000/auth/whoami
+
+### Sign out user
+POST http://localhost:3000/auth/signout
+
+### find user by id
+GET http://localhost:3000/auth/5
+
+### find all users with a given email
+GET http://localhost:3000/auth?email=my@email.com
+
+### delte user by id
+DELETE http://localhost:3000/auth/2
+
+### Update a user
+PATCH http://localhost:3000/auth/1
+content-type: application/json
+
+{
+  "email": "test@email.com"
+}
+
+### Set a color
+GET http://localhost:3000/auth/colors/red
+
+### Get a color
+GET http://localhost:3000/auth/colors
+
+
+### Create a report
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+  "make": "toyota",
+  "model": "corolla",
+  "year": 1980,
+  "mileage": 2000,
+  "lat": 0,
+  "lng": 0,
+  "price": 10000
+}
+
+### Approve a report
+PATCH http://localhost:3000/reports/2
+content-type: application/json
+
+{
+  "approved": true
+}
+
+### Get an estimate for an existing vehicle
+GET http://localhost:3000/reports?make=toyota&model=corolla&year=1980&mileage=10000&lat=0&lng=0
